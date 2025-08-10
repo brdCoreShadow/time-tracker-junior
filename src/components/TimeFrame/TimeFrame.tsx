@@ -1,11 +1,11 @@
 import { ITimeFrame } from "@/utils/types";
 import * as SC from "./TimeFrameStyled";
 
-const TimeFrame:React.FC<ITimeFrame> = ({timeframe, handleTimeframe, chosenTimeframe}) => {
+const TimeFrame:React.FC<Partial <ITimeFrame>> = ({timeframe, handleTimeframe, chosenTimeframe}) => {
 
 
 const choseTimeframe = () => {
-    handleTimeframe(timeframe)
+    handleTimeframe!(timeframe!)
 }
 
   return (

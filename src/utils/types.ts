@@ -6,6 +6,7 @@ export interface ITimeFrame {
 timeframe:string;
 handleTimeframe:(timeframe:string)=>void;
 chosenTimeframe?:string;
+tracking:ITracking[];
 }
 
 export interface ITimeframeStyled {
@@ -23,4 +24,11 @@ export interface ITracking {
 
 export interface TrackItemsProps {
   tracking?: ITracking[] | null;
+}
+
+export interface IColorsHandler {
+    activity:string;
+    trackItemHandler:(activity:string)=>string;
+    trackIconHandler:(activity:string)=>string;
+    bgImage:string;
 }

@@ -5,8 +5,11 @@ import avaPic from "../../assets/images/image-jeremy.png";
 import TimeFrame from "../TimeFrame/TimeFrame";
 import { ITimeFrame } from "@/utils/types";
 
-const UserItem: React.FC<Partial <ITimeFrame>> = ({handleTimeframe, chosenTimeframe}) => {
-  return (
+const UserItem: React.FC<Partial <ITimeFrame>> = ({handleTimeframe, chosenTimeframe, tracking}) => {
+  
+const user_name = tracking?.[0]?.user_name ?? "Unknown";  
+
+    return (
     <SC.UserItemStyled>
       <SC.AvaCon>
         <SC.AvaThumb>
@@ -14,7 +17,7 @@ const UserItem: React.FC<Partial <ITimeFrame>> = ({handleTimeframe, chosenTimefr
         </SC.AvaThumb>
         <SC.ContentCon>
           <p>Report for</p>
-          <h3>Vsevolodych the Great</h3>
+          <h3>{user_name}</h3>
         </SC.ContentCon>
       </SC.AvaCon>
       <SC.DashBoardCon>

@@ -48,6 +48,7 @@ const App: React.FC = () => {
   }, [tracking, chosenTimeframe]);
 
   
+
   return (
     <SC.AppCon>
       <SharedLayout>
@@ -59,6 +60,7 @@ const App: React.FC = () => {
             <UserItem
               handleTimeframe={handleTimeframe}
               chosenTimeframe={chosenTimeframe}
+              tracking={chosenTrack}
             />
             {chosenTrack && <TrackItems tracking={chosenTrack} />}
           </>
