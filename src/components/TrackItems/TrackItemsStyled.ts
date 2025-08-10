@@ -8,6 +8,10 @@ export const Wrapper = styled.li<Partial<IColorsHandler>>`
     trackItemHandler && activity ? trackItemHandler(activity) : "transparent"};
 
   border-radius: 16px;
+
+  @media (min-width: 1280px){
+   
+  }
 `;
 
 export const TrackItemStyled = styled.div`
@@ -28,6 +32,10 @@ export const TrackItemStyled = styled.div`
   @media (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  @media (min-width: 1280px){
+    height: 100%;
   }
 `;
 
@@ -80,5 +88,9 @@ export const PrevDataCon = styled.div`
   & > h3 {
     font-size: 15px;
     line-height: 1.2;
+
+    @media (min-width: 768px){
+        font-weight: 400;
+    }
   }
 `;

@@ -11,8 +11,6 @@ padding-right: 24px;
 background-color: #0E1323;
 
 @media (min-width: 768px){
-    padding-top: 0;
-    padding-bottom: 0;
     padding-left: 78px;
     padding-right: 78px;
 
