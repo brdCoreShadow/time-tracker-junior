@@ -6,7 +6,7 @@ export interface ITimeFrame {
 timeframe:string;
 handleTimeframe:(timeframe:string)=>void;
 chosenTimeframe?:string;
-tracking:ITracking[];
+tracking:ITracking[] | null;
 }
 
 export interface ITimeframeStyled {
