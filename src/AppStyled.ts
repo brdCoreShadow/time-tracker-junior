@@ -9,6 +9,16 @@ padding-left: 24px;
 padding-right: 24px;
 
 background-color: #0E1323;
+
+@media (min-width: 768px){
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 78px;
+    padding-right: 78px;
+
+    align-items: center;
+}
+
 @media (min-width: 1280px){
     max-width: 1280px;
 

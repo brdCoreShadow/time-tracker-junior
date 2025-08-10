@@ -64,5 +64,13 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
+
+@media (min-width: 768px){
+    justify-content: center;
+
+    & > li:not(:last-of-type){
+            margin-right: 64px;
+    }
+}
 `
 

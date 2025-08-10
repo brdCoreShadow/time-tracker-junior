@@ -24,10 +24,24 @@ export const TrackItemStyled = styled.div`
   background-color: #1c204b;
 
   border-radius: 16px;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const CurrentDataCon = styled.div`
   color: #fff;
+
+  @media (min-width: 768px) {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   & > p {
     margin-bottom: 8px;
@@ -53,6 +67,14 @@ export const PrevDataCon = styled.div`
     font-size: 18px;
     line-height: 1.2;
     font-weight: 500;
+
+    @media (min-width: 768px) {
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1.2;
+
+      color: #fff;
+    }
   }
 
   & > h3 {

@@ -1,7 +1,10 @@
 import { TrackItemsProps } from "@/utils/types";
 import * as SC from "./TrackItemsStyled";
+import { useScreenSize } from "@/hooks/useScreenSize";
 
 const TrackItems: React.FC<Partial<TrackItemsProps>> = ({ tracking }) => {
+  const { isMobile } = useScreenSize();
+
   const trackItemHandler = (activity: string): string => {
     switch (activity) {
       case "Work":
@@ -26,30 +29,32 @@ const TrackItems: React.FC<Partial<TrackItemsProps>> = ({ tracking }) => {
     if (timeframe === "weekly") return "week";
     if (timeframe === "monthly") return "month";
     return "";
-  };  
+  };
 
   return (
     <>
-      {tracking?.map(({ id, activity, current_hours, previous_hours, timeframe }) => (
-        <SC.Wrapper
-          key={id}
-          activity={activity}
-          trackItemHandler={trackItemHandler}
-        >
-          <SC.TrackItemStyled>
-            <SC.CurrentDataCon>
-              <p>{activity}</p>
-              <h3>{current_hours}hrs</h3>
-            </SC.CurrentDataCon>
-            <SC.PrevDataCon>
-              <p>...</p>
-              <h3>
-                last {handleLastPeriod(timeframe)}: {previous_hours}hrs
-              </h3>
-            </SC.PrevDataCon>
-          </SC.TrackItemStyled>
-        </SC.Wrapper>
-      ))}
+      {tracking?.map(
+        ({ id, activity, current_hours, previous_hours, timeframe }) => (
+          <SC.Wrapper
+            key={id}
+            activity={activity}
+            trackItemHandler={trackItemHandler}
+          >
+            <SC.TrackItemStyled>
+              <SC.CurrentDataCon>
+                <p>{activity}</p>
+                {isMobile ? <h3>{current_hours}hrs</h3> : <p>...</p>}
+              </SC.CurrentDataCon>
+              <SC.PrevDataCon>
+                {isMobile ? <p>...</p> : <p>{current_hours}hrs</p>}
+                <h3>
+                  last {handleLastPeriod(timeframe)}: {previous_hours}hrs
+                </h3>
+              </SC.PrevDataCon>
+            </SC.TrackItemStyled>
+          </SC.Wrapper>
+        )
+      )}
     </>
   );
 };
