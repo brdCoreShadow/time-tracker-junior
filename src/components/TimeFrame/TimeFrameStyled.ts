@@ -10,4 +10,10 @@ line-height: 1.2;
 color:${({stressed}) => stressed === "active" ? "#fff" : "#7078C9"};
 
 background-color: transparent;
+
+@media (min-width: 1280px){
+    &:active, &:hover, &:focus{
+        cursor: pointer;
+    }
+}
 `
